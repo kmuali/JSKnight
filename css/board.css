@@ -1,0 +1,62 @@
+#board {
+    height: 50vh;
+    width: 50vh;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    border: 0.5vh var(--dark) solid;
+
+}
+
+#board span {
+    position: relative;
+    background-color: var(--dark);
+    border: 0.3vh var(--dark) solid;
+}
+
+#board span[is-black='0'] {
+    background-color: var(--light);
+    border: 0.3vh var(--light) solid;
+}
+
+#board span[has-knight='1'] {
+    background-image: url(../svg/white-knight.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#board span[is-target='1'] {
+    background-image: url(../svg/target.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#board span:hover {
+    background-color: var(--hover);
+    border: 0.3vh black solid;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+#board span:active {
+    background-color: #444;
+    transform: rotateY(180deg) rotateX(-180deg);
+    transition-duration: 0s;
+}
+
+#board span[hint='1']::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    transform: translate(50%, 50%);
+    background-color: white;
+    z-index: 1;
+    border-radius: 50%;
+    border: 0.3vh black solid;
+    opacity: 50%;
+}

@@ -1,0 +1,25 @@
+:root {
+    --dark: rgb(168, 132, 85);
+    --light: Burlywood;
+    --hover: DodgerBlue;
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    flex-direction: column;
+    background-color: #eee;
+}
+
+
+.copyright {
+    font-size: 2vh;
+    position: absolute;
+    bottom: 0;
+    user-select: none;
+}
